@@ -833,6 +833,8 @@
                 <liquibase-plugin.username>beefcare</liquibase-plugin.username>
                 <profile.test>test,testdev</profile.test>
                 <spring.profiles.active>dev${profile.tls}${profile.no-liquibase}</spring.profiles.active>
+                <!-- Windows reports Vietnam's timezone as the legacy "Asia/Saigon", which PostgreSQL rejects -->
+                <spring-boot.run.jvmArguments>-Duser.timezone=Asia/Ho_Chi_Minh</spring-boot.run.jvmArguments>
             </properties>
             <dependencies>
                 <dependency>
